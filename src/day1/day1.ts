@@ -1,8 +1,7 @@
-export const calculateFuelForMass = (mass: number) => {
-  return Math.floor(mass / 3) - 2;
-};
-
-export const day1 = (input: number[]) => {
-  const fuel = input.map((m) => calculateFuelForMass(m));
-  return fuel.reduce((a, b) => a + b, 0);
+export const day1 = (data: number[]) => {
+  let rob = 0
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] > data[i - 1]) { rob++ }
+  };
+  return rob;
 };
