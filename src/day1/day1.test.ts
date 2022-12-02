@@ -2,7 +2,7 @@ import { day1 } from './day1';
 import { data, testData } from './day1.data';
 
 test('Provided test cases', () => {
-  expect(day1(testData)).toBe(7);
+  expect(day1(testData)).toBe(240000);
 });
 
 

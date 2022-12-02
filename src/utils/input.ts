@@ -20,3 +20,8 @@ export const parseInput = (input: string) => {
   const trimmed = inputArray.map((e) => e.trim());
   return mapToNumberIfNecessary(trimmed);
 };
+
+export const parseLines = (input: string, delimiter?: string) => {
+  const inputArray = input.split(delimiter || getDelimiter(input));
+  return inputArray.map((element) => element.trim());
+};
