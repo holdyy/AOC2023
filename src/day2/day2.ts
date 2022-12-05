@@ -26,7 +26,7 @@
 
 //     //console.log(player[0]);
 //     //console.log(player[1]);
-//     //console.log(rob);
+//     console.log(rob);
 
 //   };
 
@@ -62,7 +62,7 @@ export const day2 = (data: string) => {
 
     //console.log(player[0]);
     //console.log(player[1]);
-    //console.log(rob);
+    //console.log(bob);
 
   };
 
