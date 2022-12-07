@@ -1,9 +1,9 @@
 const getDelimiter = (input: string) => {
-  if (input.includes(',')) {
-    return ',';
-  }
   if (input.includes('\n')) {
     return '\n';
+  }
+  if (input.includes(',')) {
+    return ',';
   }
   return '';
 };
