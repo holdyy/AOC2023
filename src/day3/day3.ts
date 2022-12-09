@@ -27,7 +27,6 @@
 // };
 
 export const day3 = (data: String) => {
-  let array = []
   const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   let score = 0
 
