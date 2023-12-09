@@ -12,7 +12,6 @@ export const day1 = (data: string) => {
     Number = +Round
     score += Number
 
-    console.log(score)
   }
   return score;
 };
