@@ -19,9 +19,9 @@ export const day1part2 = (data: string) => {
   }
 
   for (let i = 0; i < data.length; i++) {
-    console.log(data[i])
+
     NumberArray = data[i].match(/\d|one|two|three|four|five|six|seven|eight|nine/g);
-    console.log(NumberArray)
+
     for (let j = 0; j < NumberArray.length; j++) {
       if (NumberArray[j] == "one") { NumberArray[j] = "1" }
       if (NumberArray[j] == "two") { NumberArray[j] = "2" }
@@ -35,7 +35,6 @@ export const day1part2 = (data: string) => {
     }
 
     LastArray = reverseData[i].match(/\d|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin/g);
-    console.log(reverseData[i])
 
     for (let z = 0; z < LastArray.length; z++) {
       if (LastArray[z] == "eno") { LastArray[z] = "1" }
@@ -49,15 +48,11 @@ export const day1part2 = (data: string) => {
       if (LastArray[z] == "enin") { LastArray[z] = "9" }
     }
 
-    console.log(LastArray)
+    round = NumberArray[0] + LastArray[0]
 
-    if (NumberArray.length == 1) { round = NumberArray[0] }
-    else { round = NumberArray[0] + LastArray[0] }
     number = +round
     score += number
-    console.log(round)
 
-    console.log(score)
   }
   return score;
 };
