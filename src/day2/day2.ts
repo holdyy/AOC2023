@@ -13,7 +13,7 @@ export const day2 = (data: string) => {
     redGames = []
     blueGames = []
     greenGames = []
-    games = data[i].split((/[\s,;:]+/))
+    games = data[i].split(/[\s,;:]+/)
     gameID.push(+games[1])
     for (let j = 0; j < games.length; j++) {
       if (games[j] == "red") { redGames.push(+games[(j - 1)]) }
