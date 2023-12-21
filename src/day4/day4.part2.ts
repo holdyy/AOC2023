@@ -15,11 +15,13 @@ export const day4part2 = (data: string) => {
   console.log(matches)
 
   let scores = Array(matches.length).fill(1)
+
   console.log(scores)
   for (let i = 0; i < matches.length; i++) {
     for (let j = 0; j < scores[i]; j++) {
       let start = i + 1;
       let end = i + matches[i] + 1;
+      //scores = scores.fill(scores[i] + 1, start, end)
 
       for (let k = start; k < end; k++) {
         scores[k]++;
