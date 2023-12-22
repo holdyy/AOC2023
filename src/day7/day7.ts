@@ -34,7 +34,9 @@ export const day7 = (data: string) => {
   }
 
   function sortArraysByIndex(arrays: number[][]): number[][] {
+    const numArrays = arrays.length;
     const arrayLength = arrays[0].length;
+
     const order = Array.from({ length: arrayLength }, (_, i) => i);
 
     arrays.sort((a, b) => {
@@ -50,8 +52,8 @@ export const day7 = (data: string) => {
     return arrays;
   }
 
-  function combineMultipleArrays(arr1: number[], arr2: number[], arr3: number[], arr4: number[], arr5: number[], arr6: number[]): number[] {
-    return arr1.concat(arr2, arr3, arr4, arr5, arr6);
+  function combineMultipleArrays(arr1: number[], arr2: number[], arr3: number[], arr4: number[], arr5: number[], arr6: number[], arr7: number[]): number[] {
+    return arr1.concat(arr2, arr3, arr4, arr5, arr6, arr7);
   }
 
   function calculateScore(arr1: number[], arr2: number[]): number {
@@ -85,15 +87,14 @@ export const day7 = (data: string) => {
     mapofNums.push(nums)
   }
 
-  console.log(mapofNums)
   sortArraysByIndex(mapofNums)
-  console.log(mapofNums)
 
   for (let i = 0; i < data.length; i++) {
+    let hand = mapofNums[i].slice(0, 5);
+    matches = findRepeatedNumbers(hand)
+    console.log(mapofNums[i].slice(0, 5))
 
-    matches = findRepeatedNumbers(mapofNums[i])
-
-    if (countUnique(matches) == 0) { highCard.push(i) }
+    if (countUnique(matches) == 0) { highCard.push(mapofNums[i][5]) }
     if (countUnique(matches) == 1 && matches.length == 1) { pair.push(mapofNums[i][5]) }
     if (countUnique(matches) == 1 && matches.length == 2) { threeofaKind.push(mapofNums[i][5]) }
     if (countUnique(matches) == 1 && matches.length == 3) { fourofaKind.push(mapofNums[i][5]) }
@@ -103,12 +104,8 @@ export const day7 = (data: string) => {
 
   }
 
-  console.log(rank)
-  rankings = combineMultipleArrays(fullHouse, fourofaKind, threeofaKind, twoPair, pair, highCard)
-  console.log(rankings)
+  rankings = combineMultipleArrays(fiveofaKind, fourofaKind, fullHouse, threeofaKind, twoPair, pair, highCard)
   let score = calculateScore(rankings, rank)
-
-  console.log(score)
 
   return score;
 };
