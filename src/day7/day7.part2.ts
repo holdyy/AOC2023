@@ -107,9 +107,9 @@ export const day7part2 = (data: string) => {
     matches = findRepeatedNumbers(hand)
     let jokers = findRepeatedJokers(hand)
 
-    console.log(mapofNums[i].slice(0, 5))
-    console.log(jokers)
-    console.log(matches)
+    //console.log(mapofNums[i].slice(0, 5))
+    //console.log(jokers)
+    //console.log(matches)
 
     if (countUnique(matches) == 0 && jokers == 0) { highCard.push(mapofNums[i][5]) }
     if (countUnique(matches) == 0 && jokers == 1) { pair.push(mapofNums[i][5]) }
@@ -141,7 +141,7 @@ export const day7part2 = (data: string) => {
 
   rankings = combineMultipleArrays(fiveofaKind, fourofaKind, fullHouse, threeofaKind, twoPair, pair, highCard)
   let score = calculateScore(rankings, rank)
-  console.log(score)
+  //console.log(score)
 
   return score;
 };

@@ -16,53 +16,53 @@ export const day7 = (data: string) => {
 
 
   function findRepeatedNumbers(arr): number[] {
-    const numCount: { [key: number]: number } = {};
-    const repeatedNumbers: number[] = [];
+    const numCount: { [key: number]: number } = {}
+    const repeatedNumbers: number[] = []
 
     arr.forEach((char) => {
       if (numCount[char]) {
-        repeatedNumbers.push(char);
+        repeatedNumbers.push(char)
       } else {
-        numCount[char] = 1;
+        numCount[char] = 1
       }
-    });
-    return repeatedNumbers;
+    })
+    return repeatedNumbers
   }
 
   function countUnique(iterable) {
-    return new Set(iterable).size;
+    return new Set(iterable).size
   }
 
   function sortArraysByIndex(arrays: number[][]): number[][] {
     const numArrays = arrays.length;
     const arrayLength = arrays[0].length;
 
-    const order = Array.from({ length: arrayLength }, (_, i) => i);
+    const order = Array.from({ length: arrayLength }, (_, i) => i)
 
     arrays.sort((a, b) => {
       for (let i = 0; i < arrayLength; i++) {
-        const index = order[i];
+        const index = order[i]
         if (a[index] !== b[index]) {
-          return b[index] - a[index];
+          return b[index] - a[index]
         }
       }
-      return 0;
-    });
+      return 0
+    })
 
-    return arrays;
+    return arrays
   }
 
   function combineMultipleArrays(arr1: number[], arr2: number[], arr3: number[], arr4: number[], arr5: number[], arr6: number[], arr7: number[]): number[] {
-    return arr1.concat(arr2, arr3, arr4, arr5, arr6, arr7);
+    return arr1.concat(arr2, arr3, arr4, arr5, arr6, arr7)
   }
 
   function calculateScore(arr1: number[], arr2: number[]): number {
     let result: number = 0;
 
     arr1.forEach((element, index) => {
-      const multipliedValue = element * arr2[index];
+      const multipliedValue = element * arr2[index]
       result += multipliedValue
-    });
+    })
 
     return result;
   }
@@ -92,7 +92,7 @@ export const day7 = (data: string) => {
   for (let i = 0; i < data.length; i++) {
     let hand = mapofNums[i].slice(0, 5);
     matches = findRepeatedNumbers(hand)
-    console.log(mapofNums[i].slice(0, 5))
+    //console.log(mapofNums[i].slice(0, 5))
 
     if (countUnique(matches) == 0) { highCard.push(mapofNums[i][5]) }
     if (countUnique(matches) == 1 && matches.length == 1) { pair.push(mapofNums[i][5]) }
